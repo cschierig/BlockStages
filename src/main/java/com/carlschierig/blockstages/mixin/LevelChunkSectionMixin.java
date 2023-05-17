@@ -2,7 +2,7 @@ package com.carlschierig.blockstages.mixin;
 
 import com.carlschierig.blockstages.BlockStages;
 import com.carlschierig.blockstages.util.BlockStagesUtil;
-import com.carlschierig.blockstages.util.IUncheckedBlockStateGetter;
+import com.carlschierig.blockstages.util.IChunkSectionUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunkSection;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LevelChunkSection.class)
-public abstract class LevelChunkSectionMixin implements IUncheckedBlockStateGetter {
+public abstract class LevelChunkSectionMixin implements IChunkSectionUtils {
 
     @Final
     @Shadow

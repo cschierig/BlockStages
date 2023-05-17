@@ -2,8 +2,8 @@ package com.carlschierig.blockstages.mixin;
 
 import com.carlschierig.blockstages.BlockStages;
 import com.carlschierig.blockstages.util.BlockStagesUtil;
+import com.carlschierig.blockstages.util.IChunkSectionUtils;
 import com.carlschierig.blockstages.util.IScheduleChunkRebuild;
-import com.carlschierig.blockstages.util.IUncheckedBlockStateGetter;
 import net.darkhax.gamestages.GameStageHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -50,7 +50,7 @@ public abstract class ClientLevelMixin extends Level implements IScheduleChunkRe
             int sectionIndex = chunk.getSectionIndex(pos.getY());
             LevelChunkSection section = chunk.getSection(sectionIndex);
 
-            if (section instanceof IUncheckedBlockStateGetter getter) {
+            if (section instanceof IChunkSectionUtils getter) {
                 var currentState = getter.getBlockStateUnchecked(pos);
                 var currentIdf = BlockStagesUtil.getStateIdentifier(currentState);
 

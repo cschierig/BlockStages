@@ -3,8 +3,11 @@
   "minVersion": "0.8",
   "package": "com.carlschierig.blockstages.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
+  "server": [
     "LevelChunkSectionMixin"
+  ],
+  "mixins": [
+    "ServerPlayerGameModeMixin"
   ],
   "client": [
     "BlockModelsMixin",
